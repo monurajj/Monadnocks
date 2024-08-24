@@ -26,7 +26,6 @@ function NavBar() {
                 height={50}
                 className="rounded-full border-2 border-yellow-500"
               />
-
               <h1 className="ml-2 text-black text-2xl font-Uchen font-semibold">
                 Monadnocks
               </h1>
@@ -70,19 +69,15 @@ function NavBar() {
             {/* Mobile Menu Icon */}
             <div className="md:hidden flex items-center">
               <button onClick={toggleMobileMenu} className="text-black">
-                {isMobileMenuOpen ? (
-                  <FaTimes size={24} />
-                ) : (
-                  <FaBars size={24} />
-                )}
+                {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
               </button>
             </div>
           </div>
 
           {/* Mobile Menu */}
           <div
-            className={`md:hidden flex flex-col absolute top-14 right-0 bg-green-200 rounded-l-lg shadow-lg py-6 mt-2 transition-transform duration-300 ${
-              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            className={`md:hidden flex flex-col absolute top-14 right-0 bg-green-200 rounded-l-lg shadow-lg py-6 mt-2 transition-all duration-300 ${
+              isMobileMenuOpen ? "block" : "hidden"
             }`}
           >
             <ul className="flex flex-col space-y-4 p-4">
@@ -91,35 +86,35 @@ function NavBar() {
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Home</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scalesit100 hover-cursor-pointer transition-transform origin-left"></span>
+                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
               <li
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Services</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scalesit100 hover-cursor-pointer transition-transform origin-left"></span>
+                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
               <li
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Contacts</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scalesit100 hover-cursor-pointer transition-transform origin-left"></span>
+                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
               <li
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>About Us</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scalesit100 hover-cursor-pointer transition-transform origin-left"></span>
+                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
               <li
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Shop Now</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scalesit100 hover-cursor-pointer transition-transform origin-left"></span>
+                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
             </ul>
           </div>
