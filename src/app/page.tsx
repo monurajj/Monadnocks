@@ -4,11 +4,3 @@ export default function Home() {
     <HomePage/>
   );
 }
-{/* <Image
-              src="/sonu.svg"
-              alt="Vercel Logo"
-              // className="bg-white"
-              width={200}
-              height={304}
-              priority
-            /> */}

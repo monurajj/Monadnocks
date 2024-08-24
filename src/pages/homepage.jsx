@@ -9,7 +9,7 @@ import customerImage02 from "../assets/customerImage02.png";
 import customerImage03 from "../assets/customerImage03.png";
 import MonuImage from "../assets/monu.png";
 import SonuImage from "../assets/sonu.png";
-import RajaImage from "../assets/rajababu.png";
+import RajaImage from "../assets/rajababu.jpeg";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa";
@@ -145,9 +145,9 @@ function HomePage() {
                 </div>
               </div>
               <p className="mt-4 text-gray-700 leading-relaxed flex-grow">
-                "I am extremely satisfied with the products and services
+              &quotI am extremely satisfied with the products and services
                 provided by Monadnocks. The delivery was quick, and the quality
-                is top-notch. Highly recommended!"
+                is top-notch. Highly recommended!&quot
               </p>
             </div>
 
@@ -175,9 +175,9 @@ function HomePage() {
                 </div>
               </div>
               <p className="mt-4 text-gray-700 leading-relaxed flex-grow">
-                "Monadnocks has exceeded my expectations. The prices are
+              &quotMonadnocks has exceeded my expectations. The prices are
                 unbeatable, and their community-focused approach is truly
-                inspiring."
+                inspiring.&quot
               </p>
             </div>
 
@@ -205,8 +205,8 @@ function HomePage() {
                 </div>
               </div>
               <p className="mt-4 text-gray-700 leading-relaxed flex-grow">
-                "Fast delivery, great quality, and wonderful customer service.
-                Monadnocks is my go-to for essentials!"
+              &quotFast delivery, great quality, and wonderful customer service.
+                Monadnocks is my go-to for essentials!&quot
               </p>
             </div>
           </div>
@@ -273,7 +273,7 @@ function HomePage() {
             </h2>
             <p className="text-gray-600">
               Monu Rajj is in charge of overall development, focusing on
-              technology and the company's future growth. He ensures we stay
+              technology and the company&apos;apostrophes&apos;s future growth. He ensures we stay
               ahead in innovation and development.
             </p>
           </div>
