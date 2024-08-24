@@ -7,21 +7,29 @@ function HomePage() {
             {/* body */}
 
             {/* row 1 */}
-            <div>
+            <div className='flex'>
                 
             </div>
 
             {/* row 2 */}
-            <div></div>
+            <div>
+
+            </div>
 
             {/* row 3 */}
-            <div></div>
+            <div>
+
+            </div>
 
             {/* row 4 */}
-            <div></div>
+            <div>
+
+            </div>
 
             {/* row 5 */}
-            <div></div>
+            <div>
+                
+            </div>
 
         </div>
     );
