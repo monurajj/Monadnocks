@@ -12,10 +12,17 @@ import MonuImage from "../assets/monu.png";
 import RajaImage from "../assets/rajababu.jpeg";
 import row1Image from "../assets/row1Image.png";
 import SonuImage from "../assets/sonu.png";
+import ShopComingSoonToast from "@/components/ShopComingSoonToast";
 
 function HomePage() {
   const [message, setMessage] = useState("");
+  const [showToast, setShowToast] = useState(false);
 
+  const handleShopNowClick = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -55,7 +62,8 @@ function HomePage() {
             of profits dedicated to charitable causes and launching our NGO to
             support communities.
           </p>
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start"
+          onClick={handleShopNowClick}>
             <button className="bg-green-600 text-white text-base sm:text-lg font-semibold rounded-lg py-3 px-6 sm:px-8 shadow-lg transform hover:scale-105 transition-transform duration-200">
               Shop Now
             </button>
@@ -72,6 +80,13 @@ function HomePage() {
             />
           </div>
         </div>
+        {/* Show Toast */}
+      {showToast && (
+        <ShopComingSoonToast
+          message="We’re working hard to bring this page to you soon. Stay tuned!"
+          onClose={() => setShowToast(false)}
+        />
+      )}
       </div>
 
       {/* Second Row */}
@@ -231,8 +246,8 @@ function HomePage() {
       </div>
 
       {/* fourth Row */}
-            
 
+            
       {/* Fifth Row - Know More About Us */}
       <div id="AboutUs" className="container mx-auto px-6 lg:px-16 py-12 lg:py-24 bg-green-100/75">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
