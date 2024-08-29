@@ -5,9 +5,16 @@ import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logoImage from "../assets/logoImage01.jpeg";
+import ShopComingSoonToast from "../components/ShopComingSoonToast";
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+
+  const handleShopNowClick = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -34,16 +41,14 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex gap-x-6 text-black">
-
               <Link href={"#Home"} className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer"
-                >
+                <p className="transition-all group-hover:text hover-cursor-pointer">
                   Home
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </Link>
 
-              <Link href={"#Services"} className="scroll-smooth relative group">
+              <Link href={"#Services"} className="relative group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   Services
                 </p>
@@ -56,22 +61,21 @@ function NavBar() {
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </Link>
-              
+
               <Link href={"#AboutUs"} className="relative group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
-                  About us
+                  About Us
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </Link>
-              
-              <button className="relative flex group">
+
+              <button className="relative flex group" onClick={handleShopNowClick}>
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   Shop Now
                 </p>
-                <BsArrowRight className="ml-1.5 h-5 w-5 mt-0.5 " />
+                <BsArrowRight className="ml-1.5 h-5 w-5 mt-0.5" />
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </button>
-
             </ul>
 
             {/* Mobile Menu Icon */}
@@ -83,51 +87,67 @@ function NavBar() {
           </div>
 
           {/* Mobile Menu */}
-          {/* <div
+          <div
             className={`md:hidden flex flex-col absolute top-14 right-0 bg-green-200 rounded-l-lg shadow-lg py-6 mt-2 transition-all duration-300 ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
           >
             <ul className="flex flex-col space-y-4 p-4">
-              <li
+              <Link
+                href={"#Home"}
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Home</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </li>
-              <li
+              </Link>
+
+              <Link
+                href={"#Services"}
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Services</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </li>
-              <li
+              </Link>
+
+              <Link
+                href={"#Contact"}
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
-                <p>Contacts</p>
+                <p>Contact</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </li>
-              <li
+              </Link>
+
+              <Link
+                href={"#AboutUs"}
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>About Us</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </li>
-              <li
-                onClick={toggleMobileMenu}
+              </Link>
+
+              <button
+                onClick={handleShopNowClick}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
                 <p>Shop Now</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </li>
+              </button>
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
+      
+      {/* Show Toast */}
+      {showToast && (
+        <ShopComingSoonToast
+          message="We’re working hard to bring this page to you soon. Stay tuned!"
+          onClose={() => setShowToast(false)}
+        />
+      )}
     </nav>
   );
 }
