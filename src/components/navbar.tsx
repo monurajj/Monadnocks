@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { BsArrowRight } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logoImage from "../assets/logoImage01.jpeg";
-import { BsArrowRight } from "react-icons/bs";
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,30 +34,36 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex gap-x-6 text-black">
-              <button className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
+
+              <Link href={"#Home"} className="relative group">
+                <p className="transition-all group-hover:text hover-cursor-pointer"
+                >
                   Home
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
-              <button className="relative group">
+              </Link>
+
+              <Link href={"#Services"} className="scroll-smooth relative group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   Services
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
-              <button className="relative group">
+              </Link>
+
+              <Link href={"#Contact"} className="relative group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   Contact
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
-              <button className="relative group">
+              </Link>
+              
+              <Link href={"#AboutUs"} className="relative group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   About us
                 </p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
+              </Link>
+              
               <button className="relative flex group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
                   Shop Now
@@ -64,6 +71,7 @@ function NavBar() {
                 <BsArrowRight className="ml-1.5 h-5 w-5 mt-0.5 " />
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </button>
+
             </ul>
 
             {/* Mobile Menu Icon */}
@@ -75,7 +83,7 @@ function NavBar() {
           </div>
 
           {/* Mobile Menu */}
-          <div
+          {/* <div
             className={`md:hidden flex flex-col absolute top-14 right-0 bg-green-200 rounded-l-lg shadow-lg py-6 mt-2 transition-all duration-300 ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
@@ -117,7 +125,7 @@ function NavBar() {
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
