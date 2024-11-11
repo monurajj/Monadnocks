@@ -16,7 +16,7 @@ const MissionComponent = () => {
         {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-slide-up">
-            Shaping Tomorrow's Future
+            Shaping Tomorrow&apos;s Future
           </h1>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6 animate-scale-in" />
         </div>
@@ -27,10 +27,16 @@ const MissionComponent = () => {
           <div className="lg:w-1/2 animate-fade-in">
             <div className="relative transition-transform duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-blue-600 rounded-xl transform rotate-6 opacity-20" />
-              <Image
-              src={monadnocksTeamImg}
-              alt="Profile Image"
-            />
+              <div className="relative w-full h-[400px] rounded-xl overflow-hidden">
+                <Image
+                  src={monadnocksTeamImg}
+                  alt="Monadnocks Team"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 
@@ -39,14 +45,14 @@ const MissionComponent = () => {
             <div className="transform transition-all duration-500 hover:translate-x-2">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                At Monadnocks, we're dedicated to creating a brighter tomorrow through innovative solutions that enhance lives. Our commitment extends beyond profit margins – we prioritize meaningful impact, unwavering transparency, and universal accessibility.
+                At Monadnocks, we&apos;re dedicated to creating a brighter tomorrow through innovative solutions that enhance lives. Our commitment extends beyond profit margins &ndash; we prioritize meaningful impact, unwavering transparency, and universal accessibility.
               </p>
             </div>
 
             <div className="transform transition-all duration-500 hover:translate-x-2">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision Forward</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our roadmap is clear: continuous innovation and strategic expansion to reach more communities while maintaining our commitment to exceptional value. Through sustainable practices and customer-centric approaches, we're building a future where quality meets affordability.
+                Our roadmap is clear: continuous innovation and strategic expansion to reach more communities while maintaining our commitment to exceptional value. Through sustainable practices and customer-centric approaches, we&apos;re building a future where quality meets affordability.
               </p>
               <button className="group inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
                 Learn More
@@ -56,19 +62,6 @@ const MissionComponent = () => {
           </div>
         </div>
 
-        {/* Stats Section */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          {stats.map(({ icon: Icon, label, value }, index) => (
-            <div 
-              key={label} 
-              className="bg-white p-6 rounded-lg shadow-md text-center transform transition-all duration-500 hover:shadow-lg hover:scale-105 hover:-translate-y-1"
-            >
-              <Icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <div className="text-3xl font-bold text-gray-900 mb-2">{value}</div>
-              <div className="text-gray-600">{label}</div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </div>
   );

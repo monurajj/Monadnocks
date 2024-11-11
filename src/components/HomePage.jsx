@@ -112,7 +112,7 @@ const HomePage = () => {
             Building a Brighter Future Together
           </h1>
           <p className="text-base sm:text-lg text-gray-600 mb-6 lg:mb-8 leading-relaxed">
-            We're on a mission to make a difference. Through our innovative services and commitment to social responsibility, we're creating positive change in communities around the world.
+            We&apos;re on a mission to make a difference. Through our innovative services and commitment to social responsibility, we&apos;re creating positive change in communities around the world.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
