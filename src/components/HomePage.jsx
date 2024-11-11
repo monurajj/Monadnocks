@@ -165,7 +165,7 @@ const HomePage = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:w-1/2 w-full flex justify-center lg:justify-end"
         >
-          <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-[36rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+          <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-[36rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 mt-[-24px]">
             <motion.div
               initial="hidden"
               animate="visible"
