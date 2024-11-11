@@ -98,6 +98,36 @@ const AnimatedServicesIllustration = () => (
 );
 
 const HomePage = () => {
+  const titleVariants = {
+    hidden: {
+      opacity: 0,
+      y: -20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  const titleText = "Our Upcoming Products";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col justify-center">
       <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between py-12 lg:py-24" id="Home">
@@ -136,6 +166,30 @@ const HomePage = () => {
           className="lg:w-1/2 w-full flex justify-center lg:justify-end"
         >
           <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-[36rem] lg:h-[36rem] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={titleVariants}
+              className="text-center py-2 sm:py-4"
+            >
+              <div className="flex justify-center flex-wrap px-2">
+                {titleText.split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    custom={index}
+                    variants={letterVariants}
+                    className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-800 inline-block"
+                    style={{
+                      display: char === " " ? "inline-block" : "inline-block",
+                      width: char === " " ? "0.3em" : "auto",
+                      marginRight: "0.01em"
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
             <AnimatedServicesIllustration />
           </div>
         </motion.div>
