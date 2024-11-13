@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaTwitter } from "react-icons/fa";
 
 const ContactUs = () => {
@@ -7,28 +8,28 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
 
-    fetch(
-      "https://script.google.com/macros/s/AKfycbyakfRKP3xXSgayZqbVAGeL1eJMdTafrAxbdj76j0oTByK9GVSziaHG3RV4gVOZ1R63/exec",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
-      .then((response) => {
-        setMessage("Message sent successfully");
-        setErrorMessage("");
-        setTimeout(() => {
-          setMessage("");
-          form.reset();
-        }, 3000); // Display message for 3 seconds
-      })
-      .catch((error) => {
-        console.error("Error!", error.message);
-        setErrorMessage("Failed to send message. Please try again.");
-      });
+    emailjs
+      .sendForm(
+        "service_r61kpfu",       // Replace with your EmailJS Service ID
+        "template_nh68txa",       // Replace with your EmailJS Template ID
+        e.target,
+        "PUYULeXlwF1-NbWZN"       // Replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          setMessage("Message sent successfully");
+          setErrorMessage("");
+          setTimeout(() => {
+            setMessage("");
+            e.target.reset();     // Reset form after successful submission
+          }, 2000);
+        },
+        (error) => {
+          console.error("Error!", error.text);
+          setErrorMessage("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -46,11 +47,11 @@ const ContactUs = () => {
             <div className="flex items-center space-x-4">
               <FaEnvelope />
               <a
-                href="mailto:monu2feb2004@gmail.com"
+                href="mailto:contactmonadnocks@gmail.com"
                 className="hover:underline"
                 aria-label="Email"
               >
-                monu2feb2004@gmail.com
+                contactmonadnocks@gmail.com
               </a>
             </div>
             <div className="flex items-center space-x-4 mt-4">
@@ -83,7 +84,7 @@ const ContactUs = () => {
         <div className="flex flex-col justify-center p-8 w-full lg:w-1/2">
           <form
             className="space-y-6 text-black"
-            name="submit-to-google-sheet"
+            name="contact_form"
             onSubmit={handleSubmit}
           >
             <div>
@@ -92,7 +93,7 @@ const ContactUs = () => {
               </label>
               <input
                 type="text"
-                name="fullName"
+                name="user_name"     // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Your Name"
                 required
@@ -104,7 +105,7 @@ const ContactUs = () => {
               </label>
               <input
                 type="text"
-                name="emailOrPhone"
+                name="user_email"    // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Your Email or Phone"
                 required
@@ -115,7 +116,7 @@ const ContactUs = () => {
                 Message
               </label>
               <textarea
-                name="message"
+                name="message"        // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 rows="4"
                 placeholder="Your Message"
