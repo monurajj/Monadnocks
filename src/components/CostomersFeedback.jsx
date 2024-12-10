@@ -1,7 +1,7 @@
 import Image from "next/image";
-import customerImage01 from "../assets/customerImage01.png";
-import customerImage02 from "../assets/customerImage02.png";
-import customerImage03 from "../assets/customerImage03.png";
+import customerImage01 from "../assets/rhytham.png";
+import customerImage02 from "../assets/rhytham.png";
+import customerImage03 from "../assets/rhytham.png";
 
 const CostomersFeedback=()=>{
     return(
@@ -24,7 +24,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    John Doe
+                    Rajiv Kumar
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
@@ -54,7 +54,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    Jane Smith
+                    Avinash Kumar
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
@@ -84,7 +84,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    Emily Davis
+                    Rhythm Jain
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
