@@ -2,15 +2,15 @@ import Image from "next/image";
 import customerImage01 from "../assets/rhytham.png";
 import customerImage02 from "../assets/rhytham.png";
 import customerImage03 from "../assets/rhytham.png";
-
 const CostomersFeedback=()=>{
+
     return(
+      // kuchh bhi
         <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between py-12 lg:py-24">
         <div className="container mx-auto px-6 lg:px-16 py-12 lg:py-24">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
             What our customers say about us
           </h1>
-
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Customer 1 */}
             <div className="w-full lg:w-1/3 p-6 bg-white shadow-lg rounded-lg border border-gray-200 flex flex-col justify-between min-h-[20rem]">
