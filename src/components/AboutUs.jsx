@@ -5,7 +5,7 @@ import SonuImage from "../assets/sonu.png";
 
 const AboutUs=()=>{
     return(
-        <div id="AboutUs" className="container mx-auto px-6 lg:px-16 py-12 lg:py-24 bg-green-100/75">
+        <div id="AboutUs" className="container mx-auto px-6 lg:px-16 py-12 lg:py-24 ">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
           Know More About Us
         </h1>

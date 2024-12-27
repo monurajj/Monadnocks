@@ -12,8 +12,9 @@ function NavBar() {
   const [showToast, setShowToast] = useState(false);
 
   const handleShopNowClick = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 5000);
+    // setShowToast(true);
+    // setTimeout(() => setShowToast(false), 5000);
+
   };
 
   const toggleMobileMenu = () => {
@@ -69,13 +70,13 @@ function NavBar() {
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </Link>
 
-              <button className="relative flex group" onClick={handleShopNowClick}>
+              <Link href={"MonadnocksFoundation"} className="relative flex group">
                 <p className="transition-all group-hover:text hover-cursor-pointer">
-                  Shop Now
+                  Monadnocks Foundation
                 </p>
                 <BsArrowRight className="ml-1.5 h-5 w-5 mt-0.5" />
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
+              </Link>
             </ul>
 
             {/* Mobile Menu Icon */}
@@ -133,7 +134,7 @@ function NavBar() {
                 onClick={handleShopNowClick}
                 className="text-black hover:text-emerald-500 transition relative group"
               >
-                <p>Shop Now</p>
+                <p>Monadnocks Foundation</p>
                 <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
               </button>
             </ul>
