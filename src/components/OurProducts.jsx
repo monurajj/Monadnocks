@@ -1,98 +1,162 @@
-import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Book, Car, Smile, Heart } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  ArrowRight,
+  ShoppingBag,
+  Book,
+  Car,
+  Heart,
+  Users,
+  Tree,
+  Leaf,
+} from "lucide-react";
 
-const ProductCard = ({ title, description, icon: Icon, color }) => (
-  <div  className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl border-t-4 ${color}`}>
-    <div className="p-6">
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`${color} rounded-full p-3 transition-colors duration-300`}>
-          <Icon className="h-6 w-6 text-black" />
-        </div>
-        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-      </div>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
-    </div>
-    <div className="bg-gray-50 px-6 py-4 flex justify-between items-center">
-      <a href="#" className='text-green-500 hover:text-bg-green-800 '>
-        Use Now →
-      </a>
-      <Heart className="h-5 w-5 text-red-400 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-125" />
-    </div>
-  </div>
-);
+function OurProducts() {
+  const [hoveredLeft, setHoveredLeft] = useState(false);
+  const [hoveredRight, setHoveredRight] = useState(false);
 
-const HappinessGauge = ({ value }) => (
-  <div className="flex items-center gap-2 mb-8">
-    <Smile className="h-8 w-8 text-yellow-400" />
-    <div className="bg-gray-200 h-4 flex-grow rounded-full overflow-hidden">
-      <div 
-        className="bg-gradient-to-r from-yellow-300 to-yellow-500 h-full transition-all duration-1000 ease-out"
-        style={{ width: `${value}%` }}
-      ></div>
-    </div>
-    <span className="font-semibold text-gray-700">{value}% Happier</span>
-  </div>
-);
-
-
-const ProductShowcase = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [happinessLevel, setHappinessLevel] = useState(0);
-
-  useEffect(() => {
-    setIsVisible(true);
-    const timer = setTimeout(() => setHappinessLevel(99), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const products = [
+  const businessProducts = [
     {
-      title: "F2 (Fast and Fair)",
-      description: "Revolutionize your online shopping experience with premium products at unbeatable prices. Enjoy top-quality items for 30-40% less, because luxury shouldn't break the bank.",
-      icon: ShoppingBag,
-      color: "border-blue-500"
+      icon: <ShoppingBag className="w-6 h-6" />,
+      name: "F2 (Fast and Fair)",
+      description:
+        "Premium products at unbeatable prices, 30-40% less than market rates",
     },
     {
-      title: "PaperPix",
-      description: "Unleash your creativity with PaperPix! Get premium notebooks at jaw-dropping prices, and turn your ideas into art with fully customizable covers. Your imagination, our unbeatable value.",
-      icon: Book,
-      color: "border-green-500"
+      icon: <Book className="w-6 h-6" />,
+      name: "PaperPix",
+      description: "Custom notebooks with premium quality at affordable prices",
     },
     {
-      title: "CareCab",
-      description: "Redefine your ride with CareCab. Experience hassle-free booking, plush comfort, and thoughtful amenities like complimentary water. Clean, cozy, and care in every journey.",
-      icon: Car,
-      color: "border-purple-500"
-    }
+      icon: <Car className="w-6 h-6" />,
+      name: "CareCab",
+      description: "Comfortable rides with complementary amenities",
+    },
   ];
 
+  const foundationInitiatives = [
+    {
+      icon: <Leaf className="w-6 h-6" />,
+      name: "Environmental Programs",
+      description: "100 Trees Plantation Challenge",
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      name: "Education & Sports",
+      description: "Youth development through learning and athletics",
+    },
+    {
+      icon: <Heart className="w-6 h-6" />,
+      name: "Community Welfare",
+      description: "Women empowerment and cultural programs",
+    },
+  ];
 
   return (
-    <section id="Services" className=" py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-4 text-gray-800 animate-bounce">
-          Elevate Your Everyday
-        </h2>
-        <p className="text-2xl text-center mb-12 text-gray-600">
-          Discover how Monadnocks is revolutionizing daily experiences and spreading happiness!
-        </p>
-        
-        <HappinessGauge value={happinessLevel} />
+    <div className="text-black min-h-screen flex flex-col md:flex-row py-12
+    "
+    id="Services" >
+      {/* Left Side - Monadnocks Business */}
+      <div
+        className="w-full md:w-1/2 min-h-screen bg-gradient-to-b from-blue-50 to-white p-8 relative transition-all duration-300"
+        onMouseEnter={() => setHoveredLeft(true)}
+        onMouseLeave={() => setHoveredLeft(false)}
+      >
+        <div className="max-w-xl mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-bold text-blue-600 mb-4">
+              Monadnocks
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Innovative Solutions for Better Living
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {products.map((product, index) => (
-            <div 
-              key={index} 
-              className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{transitionDelay: `${index * 200}ms`}}
-            >
-              <ProductCard {...product} />
-            </div>
-          ))}
+          <div className="space-y-8 mb-12">
+            {businessProducts.map((product, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                    {product.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto">
+              Explore Products
+              <ArrowRight
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  hoveredLeft ? "translate-x-1" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </div>
-    </section>
-  );
-};
 
-export default ProductShowcase;
+      {/* Right Side - Monadnocks Foundation */}
+      <div
+        className="w-full md:w-1/2 min-h-screen bg-gradient-to-b from-purple-50 to-white p-8 relative transition-all duration-300"
+        onMouseEnter={() => setHoveredRight(true)}
+        onMouseLeave={() => setHoveredRight(false)}
+      >
+        <div className="max-w-xl mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-bold text-purple-600 mb-4">
+              Monadnocks Foundation
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Transforming Communities Together
+            </p>
+          </div>
+
+          <div className="space-y-8 mb-12">
+            {foundationInitiatives.map((initiative, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-purple-100 rounded-lg text-purple-600">
+                    {initiative.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {initiative.name}
+                    </h3>
+                    <p className="text-gray-600">{initiative.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <button className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition-colors flex items-center gap-2 mx-auto">
+              Explore Initiatives
+              <ArrowRight
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  hoveredRight ? "translate-x-1" : ""
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+export default OurProducts;

@@ -129,7 +129,7 @@ const HomePage = () => {
   const titleText = "Our Upcoming Products";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col justify-center">
+    <div className="mt-[-30px] min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col justify-center py-12">
       <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between py-12 lg:py-24" id="Home">
         {/* Text Section */}
         <motion.div

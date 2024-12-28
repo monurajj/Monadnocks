@@ -1,12 +1,11 @@
 import Image from "next/image";
 import customerImage01 from "../assets/rhytham.png";
-import customerImage02 from "../assets/rhytham.png";
-import customerImage03 from "../assets/rhytham.png";
+import customerImage02 from "../assets/ritesh.jpeg";
+import customerImage03 from "../assets/yeeshu.jpeg";
 const CostomersFeedback=()=>{
 
-    return(
-      // kuchh bhi
-        <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between py-12 lg:py-24">
+    return (
+      <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between py-12 lg:py-24 bg-green-100/75">
         <div className="container mx-auto px-6 lg:px-16 py-12 lg:py-24">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
             What our customers say about us
@@ -24,7 +23,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    Rajiv Kumar
+                    Rhythm Jain
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
@@ -54,7 +53,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    Avinash Kumar
+                    Ritesh Raj
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
@@ -84,7 +83,7 @@ const CostomersFeedback=()=>{
                 </div>
                 <div className="ml-4">
                   <h2 className="text-lg font-semibold text-gray-800">
-                    Rhythm Jain
+                    A M Yeeshu
                   </h2>
                   <p className="text-gray-600">Vill-Purhara</p>
                   <div className="flex items-center mt-2">
@@ -103,7 +102,7 @@ const CostomersFeedback=()=>{
           </div>
         </div>
       </div>
-    )
+    );
 }
 
 export default CostomersFeedback;

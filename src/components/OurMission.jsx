@@ -11,7 +11,7 @@ const MissionComponent = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-8 md:p-12 rounded-xl shadow-xl">
+    <div className="bg-green-100/75 p-4 sm:p-8 md:p-12 rounded-xl  bg-green-100/75">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 animate-fade-in">
@@ -43,16 +43,28 @@ const MissionComponent = () => {
           {/* Right Side - Content */}
           <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 animate-slide-in mt-6 lg:mt-0">
             <div className="transform transition-all duration-500 hover:translate-x-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+                Our Mission
+              </h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                At Monadnocks, we&apos;re dedicated to creating a brighter tomorrow through innovative solutions that enhance lives. Our commitment extends beyond profit margins &ndash; we prioritize meaningful impact, unwavering transparency, and universal accessibility.
+                At Monadnocks, we&apos;re dedicated to creating a brighter
+                tomorrow through innovative solutions that enhance lives. Our
+                commitment extends beyond profit margins &ndash; we prioritize
+                meaningful impact, unwavering transparency, and universal
+                accessibility.
               </p>
             </div>
 
             <div className="transform transition-all duration-500 hover:translate-x-2">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Vision Forward</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                Vision Forward
+              </h3>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
-                Our roadmap is clear: continuous innovation and strategic expansion to reach more communities while maintaining our commitment to exceptional value. Through sustainable practices and customer-centric approaches, we&apos;re building a future where quality meets affordability.
+                Our roadmap is clear: continuous innovation and strategic
+                expansion to reach more communities while maintaining our
+                commitment to exceptional value. Through sustainable practices
+                and customer-centric approaches, we&apos;re building a future
+                where quality meets affordability.
               </p>
               <button className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
                 Learn More
