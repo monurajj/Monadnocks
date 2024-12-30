@@ -1,18 +1,39 @@
-import React, { useState } from "react";
 import {
   ArrowRight,
-  ShoppingBag,
   Book,
   Car,
   Heart,
-  Users,
-  Tree,
   Leaf,
+  ShoppingBag,
+  Users,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import ShopComingSoonToast from "./ShopComingSoonToast";
 
 function OurProducts() {
   const [hoveredLeft, setHoveredLeft] = useState(false);
   const [hoveredRight, setHoveredRight] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const router = useRouter();
+
+  const handleShopNowClick = () => {
+    setShowToast(true);
+    // Use a cleanup function to prevent memory leaks
+    const timer = setTimeout(() => {
+      setShowToast(false);
+    }, 10000);
+    return () => clearTimeout(timer);
+  };
+
+  const handleMonadnocksFoundation = () => {
+    router.push("https://monadnocks-foundation-page.vercel.app/");
+  };
+
+  // Ensure toast closes properly
+  const handleCloseToast = () => {
+    setShowToast(false);
+  };
 
   const businessProducts = [
     {
@@ -52,9 +73,10 @@ function OurProducts() {
   ];
 
   return (
-    <div className="text-black min-h-screen flex flex-col md:flex-row py-12
-    "
-    id="Services" >
+    <div
+      className="text-black min-h-screen flex flex-col md:flex-row py-12 relative"
+      id="Services"
+    >
       {/* Left Side - Monadnocks Business */}
       <div
         className="w-full md:w-1/2 min-h-screen bg-gradient-to-b from-blue-50 to-white p-8 relative transition-all duration-300"
@@ -93,7 +115,10 @@ function OurProducts() {
           </div>
 
           <div className="text-center">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto">
+            <button
+              onClick={handleShopNowClick}
+              className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto"
+            >
               Explore Products
               <ArrowRight
                 className={`w-4 h-4 transition-transform duration-300 ${
@@ -143,7 +168,10 @@ function OurProducts() {
           </div>
 
           <div className="text-center">
-            <button className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition-colors flex items-center gap-2 mx-auto">
+            <button
+              onClick={handleMonadnocksFoundation}
+              className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition-colors flex items-center gap-2 mx-auto"
+            >
               Explore Initiatives
               <ArrowRight
                 className={`w-4 h-4 transition-transform duration-300 ${
@@ -154,9 +182,18 @@ function OurProducts() {
           </div>
         </div>
       </div>
+
+      {/* Toast Component */}
+      {showToast && (
+        <div className="fixed top-4 right-4 w-full z-50">
+          <ShopComingSoonToast
+            message="We're working hard to bring this page to you soon. Stay tuned!"
+            onClose={handleCloseToast}
+          />
+        </div>
+      )}
     </div>
   );
 }
-
 
 export default OurProducts;
