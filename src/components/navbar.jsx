@@ -6,15 +6,21 @@ import { BsArrowRight } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logoImage from "../assets/logoImage01.jpeg";
 import ShopComingSoonToast from "./ShopComingSoonToast";
+import { useRouter } from "next/navigation"; // Fixed import
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const router = useRouter(); // Fixed router initialization
 
+  const handleMonadnocksFoundation = () => {
+    router.push("https://monadnocks-foundation-page.vercel.app/");
+  };
+
+  
   const handleShopNowClick = () => {
-    // setShowToast(true);
-    // setTimeout(() => setShowToast(false), 5000);
-
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
   };
 
   const toggleMobileMenu = () => {
@@ -42,47 +48,64 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex gap-x-6 text-black">
-              <Link href={"#Home"} className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
-                  Home
-                </p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link href="#Home" className="relative group">
+                  <p className="transition-all group-hover:text-emerald-500">
+                    Home
+                  </p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link href={"#Services"} className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
-                  Services
-                </p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link href="#Services" className="relative group">
+                  <p className="transition-all group-hover:text-emerald-500">
+                    Services
+                  </p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link href={"#Contact"} className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
-                  Contact
-                </p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link href="#Contact" className="relative group">
+                  <p className="transition-all group-hover:text-emerald-500">
+                    Contact
+                  </p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link href={"#AboutUs"} className="relative group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
-                  About Us
-                </p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link href="#AboutUs" className="relative group">
+                  <p className="transition-all group-hover:text-emerald-500">
+                    About Us
+                  </p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link href={"MonadnocksFoundation"} className="relative flex group">
-                <p className="transition-all group-hover:text hover-cursor-pointer">
-                  Monadnocks Foundation
-                </p>
-                <BsArrowRight className="ml-1.5 h-5 w-5 mt-0.5" />
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <button
+                  onClick={handleMonadnocksFoundation}
+                  className="relative flex group items-center"
+                >
+                  <p className="transition-all group-hover:text-emerald-500">
+                    Monadnocks Foundation
+                  </p>
+                  <BsArrowRight className="ml-1.5 h-5 w-5" />
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+              </li>
             </ul>
 
             {/* Mobile Menu Icon */}
             <div className="md:hidden flex items-center">
               <button onClick={toggleMobileMenu} className="text-black">
-                {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                {isMobileMenuOpen ? (
+                  <FaTimes size={24} />
+                ) : (
+                  <FaBars size={24} />
+                )}
               </button>
             </div>
           </div>
@@ -94,58 +117,68 @@ function NavBar() {
             }`}
           >
             <ul className="flex flex-col space-y-4 p-4">
-              <Link
-                href={"#Home"}
-                onClick={toggleMobileMenu}
-                className="text-black hover:text-emerald-500 transition relative group"
-              >
-                <p>Home</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link
+                  href="#Home"
+                  onClick={toggleMobileMenu}
+                  className="text-black hover:text-emerald-500 transition relative group block"
+                >
+                  <p>Home</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link
-                href={"#Services"}
-                onClick={toggleMobileMenu}
-                className="text-black hover:text-emerald-500 transition relative group"
-              >
-                <p>Services</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link
+                  href="#Services"
+                  onClick={toggleMobileMenu}
+                  className="text-black hover:text-emerald-500 transition relative group block"
+                >
+                  <p>Services</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link
-                href={"#Contact"}
-                onClick={toggleMobileMenu}
-                className="text-black hover:text-emerald-500 transition relative group"
-              >
-                <p>Contact</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link
+                  href="#Contact"
+                  onClick={toggleMobileMenu}
+                  className="text-black hover:text-emerald-500 transition relative group block"
+                >
+                  <p>Contact</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <Link
-                href={"#AboutUs"}
-                onClick={toggleMobileMenu}
-                className="text-black hover:text-emerald-500 transition relative group"
-              >
-                <p>About Us</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </Link>
+              <li>
+                <Link
+                  href="#AboutUs"
+                  onClick={toggleMobileMenu}
+                  className="text-black hover:text-emerald-500 transition relative group block"
+                >
+                  <p>About Us</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
 
-              <button
-                onClick={handleShopNowClick}
-                className="text-black hover:text-emerald-500 transition relative group"
-              >
-                <p>Monadnocks Foundation</p>
-                <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 hover-cursor-pointer transition-transform origin-left"></span>
-              </button>
+              <li>
+                <button
+                  onClick={handleMonadnocksFoundation}
+                  className="text-black hover:text-emerald-500 transition relative group w-full text-left"
+                >
+                  <p>Monadnocks Foundation</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      
+
       {/* Show Toast */}
       {showToast && (
         <ShopComingSoonToast
-          message="We’re working hard to bring this page to you soon. Stay tuned!"
+          message="We're working hard to bring this page to you soon. Stay tuned!"
           onClose={() => setShowToast(false)}
         />
       )}

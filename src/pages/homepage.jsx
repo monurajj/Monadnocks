@@ -13,8 +13,9 @@ import AboutUs from "../components/AboutUs"
 import ContactUs from "../components/ContactUs"
 import OurMission from "../components/OurMission"
 
-function HomePage() {
 
+function HomePage() {
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
       {/* <NavBar /> */}
