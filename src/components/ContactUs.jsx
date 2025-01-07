@@ -1,39 +1,54 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaTwitter } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa";
 
 const ContactUs = () => {
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New state for loading
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true); // Set loading to true when submission starts
 
     emailjs
       .sendForm(
-        "service_r61kpfu",       // Replace with your EmailJS Service ID
-        "template_nh68txa",       // Replace with your EmailJS Template ID
+        "service_r61kpfu", // Replace with your EmailJS Service ID
+        "template_nh68txa", // Replace with your EmailJS Template ID
         e.target,
-        "PUYULeXlwF1-NbWZN"       // Replace with your EmailJS Public Key
+        "PUYULeXlwF1-NbWZN" // Replace with your EmailJS Public Key
       )
       .then(
         (result) => {
           setMessage("Message sent successfully");
           setErrorMessage("");
+          setIsLoading(false); // Stop loading when submission is successful
           setTimeout(() => {
             setMessage("");
-            e.target.reset();     // Reset form after successful submission
+            e.target.reset(); // Reset form after successful submission
           }, 2000);
         },
         (error) => {
           console.error("Error!", error.text);
           setErrorMessage("Failed to send message. Please try again.");
+          setIsLoading(false); // Stop loading when there's an error
         }
       );
   };
 
   return (
-    <div className="container mx-auto px-6 lg:px-16 py-12 lg:py-24" id="Contact">
+    <div
+      className="container mx-auto px-6 lg:px-16 py-12 lg:py-24"
+      id="Contact"
+    >
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
         Contact Us
       </h1>
@@ -56,7 +71,11 @@ const ContactUs = () => {
             </div>
             <div className="flex items-center space-x-4 mt-4">
               <FaPhone />
-              <a href="tel:7541062514" className="hover:underline" aria-label="Phone number">
+              <a
+                href="tel:7541062514"
+                className="hover:underline"
+                aria-label="Phone number"
+              >
                 7541062514
               </a>
             </div>
@@ -93,7 +112,7 @@ const ContactUs = () => {
               </label>
               <input
                 type="text"
-                name="user_name"     // Match this with EmailJS template variable
+                name="user_name" // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Your Name"
                 required
@@ -105,7 +124,7 @@ const ContactUs = () => {
               </label>
               <input
                 type="text"
-                name="user_email"    // Match this with EmailJS template variable
+                name="user_email" // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Your Email or Phone"
                 required
@@ -116,7 +135,7 @@ const ContactUs = () => {
                 Message
               </label>
               <textarea
-                name="message"        // Match this with EmailJS template variable
+                name="message" // Match this with EmailJS template variable
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 rows="4"
                 placeholder="Your Message"
@@ -126,9 +145,16 @@ const ContactUs = () => {
             <div>
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-600"
+                className="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading} // Disable the button while loading
               >
-                Send Message
+                {isLoading ? (
+                  <div className="flex justify-center items-center">
+                    <div className="w-4 h-4 border-4 border-t-transparent border-green-500 rounded-full animate-spin"></div>
+                  </div>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </div>
             {message && (
