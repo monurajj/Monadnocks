@@ -66,10 +66,10 @@ const MissionComponent = () => {
                 and customer-centric approaches, we&apos;re building a future
                 where quality meets affordability.
               </p>
-              <button className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
+{/*               <button className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300">
                 Learn More
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
