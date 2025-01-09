@@ -44,7 +44,7 @@ function Footer() {
             </p>
             <div className="flex space-x-6 items-center">
               <a
-                href="https://twitter.com/yourprofile" // Replace with actual Twitter link
+                href="https://x.com/monadnocks_" // Replace with actual Twitter link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -55,7 +55,7 @@ function Footer() {
                 />
               </a>
               <a
-                href="https://linkedin.com/in/yourprofile" // Replace with actual LinkedIn link
+                href="https://www.linkedin.com/in/monadnocks-foundation-861b53343/" // Replace with actual LinkedIn link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -66,7 +66,7 @@ function Footer() {
                 />
               </a>
               <a
-                href="https://instagram.com/yourprofile" // Replace with actual Instagram link
+                href="https://www.instagram.com/monadnocks_official/" // Replace with actual Instagram link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -76,7 +76,7 @@ function Footer() {
                   className="hover:text-pink-500 transition-colors duration-300"
                 />
               </a>
-              <a
+{/*               <a
                 href="https://facebook.com/yourprofile" // Replace with actual Facebook link
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +86,7 @@ function Footer() {
                   size={24}
                   className="hover:text-blue-600 transition-colors duration-300"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
