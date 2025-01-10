@@ -86,7 +86,7 @@ function OurProducts() {
         <div className="max-w-xl mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-blue-600 mb-4">
-              Monadnocks
+              Monadnocks Solutions
             </h2>
             <p className="text-gray-600 text-lg">
               Innovative Solutions for Better Living
