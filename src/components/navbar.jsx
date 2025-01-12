@@ -34,16 +34,18 @@ function NavBar() {
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div className="flex items-center p-1">
-              <Image
-                src={logoImage}
-                alt="Logo"
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-yellow-500"
-              />
-              <h1 className="ml-2 text-black text-2xl font-Uchen font-semibold">
-                Monadnocks
-              </h1>
+              <Link href="#Home" className="flex items-center">
+                <Image
+                  src={logoImage}
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                  className="rounded-full border-2 border-yellow-500"
+                />
+                <h1 className="ml-2 text-black text-2xl font-Uchen font-semibold">
+                  Monadnocks
+                </h1>
+              </Link>
             </div>
 
             {/* Desktop Menu */}
@@ -66,19 +68,20 @@ function NavBar() {
                 </Link>
               </li>
 
+
               <li>
-                <Link href="#Contact" className="relative group">
+                <Link href="#AboutUs" className="relative group">
                   <p className="transition-all group-hover:text-emerald-500">
-                    Contact
+                    About Us
                   </p>
                   <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </Link>
               </li>
 
               <li>
-                <Link href="#AboutUs" className="relative group">
+                <Link href="#Contact" className="relative group">
                   <p className="transition-all group-hover:text-emerald-500">
-                    About Us
+                    Contact
                   </p>
                   <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </Link>
@@ -141,6 +144,17 @@ function NavBar() {
 
               <li>
                 <Link
+                  href="#AboutUs"
+                  onClick={toggleMobileMenu}
+                  className="text-black hover:text-emerald-500 transition relative group block"
+                >
+                  <p>About Us</p>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+              </li>
+              
+              <li>
+                <Link
                   href="#Contact"
                   onClick={toggleMobileMenu}
                   className="text-black hover:text-emerald-500 transition relative group block"
@@ -150,16 +164,6 @@ function NavBar() {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  href="#AboutUs"
-                  onClick={toggleMobileMenu}
-                  className="text-black hover:text-emerald-500 transition relative group block"
-                >
-                  <p>About Us</p>
-                  <span className="absolute left-0 right-0 -bottom-0.5 h-1 bg-emerald-300 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                </Link>
-              </li>
 
               <li>
                 <button

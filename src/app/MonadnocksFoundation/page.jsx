@@ -1,147 +1,183 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { ChevronDown, ArrowRight } from "lucide-react";
 
 export default function LandingPage() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const initiatives = [
-    {
-      title: "Environmental Conservation",
-      description: "100 Trees Plantation Challenge & Green Initiatives",
-      image: "/images/environment.jpg",
-    },
-    {
-      title: "Education & Youth",
-      description: "Skill Development & Career Guidance",
-      image: "/images/education.jpg",
-    },
-    {
-      title: "Sports Program",
-      description: "Inclusive Sports & Fitness Activities",
-      image: "/images/sports.jpg",
-    },
-    {
-      title: "Women Empowerment",
-      description: "Leadership & Skill Enhancement",
-      image: "/images/women.jpg",
-    },
-    {
-      title: "Cultural Programs",
-      description: "Street Plays & Community Events",
-      image: "/images/culture.jpg",
-    },
-  ];
 
   return (
-    <div className="mt-[-30px] text-black min-h-screen bg-gradient-to-b from-white to-gray-100">
-      {/* Hero Section */}
-      <div className="relative h-screen flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-            Monadnocks Foundation
-          </h1>
-          <p className="text-2xl text-gray-600 mb-8">
-            Inspiring Change, Building Tomorrow
-          </p>
-          {/* <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
-              Join Our Mission
-            </button>
-            <button className="bg-transparent border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
-              Learn More
-            </button>
-          </div> */}
-        </div>
-        <ChevronDown className="absolute bottom-8 animate-bounce w-8 h-8 text-gray-400" />
-      </div>
+    <div className="w-full max-w-4xl mx-auto">
+      <svg viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+        {/* Background Gradient */}
+        <defs>
+          <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#eab308" stopOpacity="1" />
+            <stop offset="100%" stopColor="#15803d" stopOpacity="1" />
+          </linearGradient>
 
-      {/* About Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            At Monadnocks Foundation, we believe in creating positive change
-            through sustainable community development. Our mission extends
-            beyond traditional charity – we focus on empowering individuals and
-            communities to build a better tomorrow.
-          </p>
-        </div>
-      </section>
+          {/* Abstract Beam Pattern */}
+          <pattern
+            id="beamPattern"
+            x="0"
+            y="0"
+            width="100"
+            height="100"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M0 100 L100 0"
+              stroke="rgba(255,255,255,0.1)"
+              strokeWidth="20"
+            />
+          </pattern>
+        </defs>
 
-      {/* Initiatives Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16">
-            Our Key Initiatives
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {initiatives.map((initiative, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <img
-                  src={initiative.image}
-                  alt={initiative.title}
-                  className="rounded-lg mb-4 w-full h-48 object-cover"
-                />
-                <div className="text-center">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {initiative.title}
-                  </h3>
-                  <p className="text-gray-600">{initiative.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Main Background */}
+        <rect width="800" height="1200" fill="url(#bgGradient)" />
+        <rect width="800" height="1200" fill="url(#beamPattern)" />
 
-      {/* Call to Action */}
-      <section className="bg-blue-600 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Be Part of the Change</h2>
-          <p className="text-xl mb-8">
-            Together, we can make a difference in our communities
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-              Become a Volunteer <ArrowRight className="w-4 h-4" />
-            </button>
-            <button className="border-2 border-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
-              Support Our Cause
-            </button>
-          </div>
-        </div>
-      </section>
+        {/* Logo */}
+        <g transform="translate(350, 100)">
+          <circle cx="50" cy="50" r="40" fill="white" opacity="0.9" />
+          <text
+            x="50"
+            y="65"
+            textAnchor="middle"
+            fill="#15803d"
+            fontSize="60"
+            fontWeight="bold"
+          >
+            M
+          </text>
+        </g>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-          <div className="space-y-4">
-            <p className="text-lg">
-              <span className="font-semibold">Website:</span> www.Monadnocks.in
-            </p>
-            <p className="text-lg">
-              <span className="font-semibold">Email:</span>{" "}
-              contactmonadnocks@gmail.com
-            </p>
-          </div>
-          <div className="mt-8">
-            <p className="text-gray-600">
-              Follow us on social media for updates and news about our
-              initiatives
-            </p>
-          </div>
-        </div>
-      </section>
+        {/* Main Headline */}
+        <g transform="translate(400, 250)">
+          <text
+            textAnchor="middle"
+            fill="white"
+            fontSize="60"
+            fontWeight="bold"
+          >
+            Launching Soon! 🚀
+          </text>
+        </g>
 
+        {/* Subheading */}
+        <g transform="translate(400, 320)">
+          <text textAnchor="middle" fill="white" fontSize="32" fontWeight="300">
+            Innovating Lives, Building Dreams
+          </text>
+        </g>
+
+        {/* Product Launch Info */}
+        <g transform="translate(400, 450)">
+          <rect
+            x="-250"
+            y="-40"
+            width="500"
+            height="80"
+            rx="40"
+            fill="white"
+            opacity="0.1"
+          />
+          <text
+            textAnchor="middle"
+            fill="white"
+            fontSize="28"
+            fontWeight="bold"
+          >
+            First Product Launch for BPSC Aspirants
+          </text>
+        </g>
+
+        {/* Launch Date */}
+        <g transform="translate(400, 550)">
+          <text
+            textAnchor="middle"
+            fill="#fde047"
+            fontSize="36"
+            fontWeight="bold"
+          >
+            14th January
+          </text>
+          <text textAnchor="middle" y="45" fill="#fde047" fontSize="24">
+            Makar Sankranti
+          </text>
+        </g>
+
+        {/* Educational Icons */}
+        <g transform="translate(200, 650)">
+          {/* Book Icon */}
+          <rect x="-30" y="-20" width="60" height="40" fill="white" rx="5" />
+          <path d="M-20 -15 L20 -15" stroke="#15803d" strokeWidth="3" />
+          <path d="M-20 -5 L20 -5" stroke="#15803d" strokeWidth="3" />
+          <path d="M-20 5 L20 5" stroke="#15803d" strokeWidth="3" />
+        </g>
+
+        <g transform="translate(400, 650)">
+          {/* Graduation Cap */}
+          <path d="M-25 0 L0 -15 L25 0 L0 15 Z" fill="white" />
+          <rect x="-5" y="-20" width="10" height="10" fill="white" />
+        </g>
+
+        <g transform="translate(600, 650)">
+          {/* Progress Chart */}
+          <path
+            d="M-25 25 L-15 15 L0 20 L15 0 L25 10"
+            stroke="white"
+            strokeWidth="3"
+            fill="none"
+          />
+        </g>
+
+        {/* Tagline */}
+        <g transform="translate(400, 750)">
+          <text
+            textAnchor="middle"
+            fill="white"
+            fontSize="24"
+            fontStyle="italic"
+          >
+            "Quality Meets Affordability"
+          </text>
+        </g>
+
+        {/* Call to Action */}
+        <g transform="translate(400, 850)">
+          <rect
+            x="-100"
+            y="-30"
+            width="200"
+            height="60"
+            rx="30"
+            fill="#fde047"
+          />
+          <text
+            textAnchor="middle"
+            y="10"
+            fill="#15803d"
+            fontSize="24"
+            fontWeight="bold"
+          >
+            Stay Tuned!
+          </text>
+        </g>
+
+        {/* Contact Information */}
+        <g transform="translate(400, 950)">
+          <text textAnchor="middle" fill="white" fontSize="18">
+            For more information, email us at:
+          </text>
+          <text textAnchor="middle" y="30" fill="#fde047" fontSize="20">
+            contactmonadnocks@gmail.com
+          </text>
+        </g>
+
+        {/* Bottom Wave */}
+        <path
+          d="M0 1100 Q200 1050 400 1100 Q600 1150 800 1100 L800 1200 L0 1200 Z"
+          fill="rgba(255,255,255,0.1)"
+        />
+      </svg>
     </div>
   );
 }

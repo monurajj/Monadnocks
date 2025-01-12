@@ -40,7 +40,7 @@ function Footer() {
           {/* More ways to connect text and icons */}
           <div className="flex flex-col items-center lg:items-end space-y-2">
             <p className="text-lg font-semibold text-gray-300 text-center lg:text-right mb-2">
-              More ways to connect with us 🤩
+              More ways to connect with us
             </p>
             <div className="flex space-x-6 items-center">
               <a
@@ -66,7 +66,7 @@ function Footer() {
                 />
               </a>
               <a
-                href="https://www.instagram.com/monadnocks_official/" // Replace with actual Instagram link
+                href="https://www.instagram.com/_monadnocks_official_/" // Replace with actual Instagram link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -76,7 +76,7 @@ function Footer() {
                   className="hover:text-pink-500 transition-colors duration-300"
                 />
               </a>
-{/*               <a
+              {/*               <a
                 href="https://facebook.com/yourprofile" // Replace with actual Facebook link
                 target="_blank"
                 rel="noopener noreferrer"
