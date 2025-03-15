@@ -10,6 +10,27 @@ const AboutUs=()=>{
           Know More About Us
         </h1>
         <div className="flex flex-col lg:flex-row justify-between gap-12">
+
+            {/* Monu Rajj */}
+          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center lg:w-1/3">
+            <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+              <Image
+                className="w-full h-full object-cover"
+                src={MonuImage}
+                alt="Monu Rajj"
+              />
+            </div>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              Monu Rajj - Founder
+            </h2>
+            <p className="text-gray-600">
+              Monu Rajj is in charge of overall development, focusing on
+              technology and the company&apos;s future growth. He ensures we
+              stay ahead in innovation and development.
+            </p>
+          </div>
+        </div>
+
           {/* Raj Bhushan Raj */}
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center lg:w-1/3">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
@@ -48,25 +69,7 @@ const AboutUs=()=>{
             </p>
           </div>
 
-          {/* Monu Rajj */}
-          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center lg:w-1/3">
-            <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
-              <Image
-                className="w-full h-full object-cover"
-                src={MonuImage}
-                alt="Monu Rajj"
-              />
-            </div>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">
-              Monu Rajj - Co-founder & CTO
-            </h2>
-            <p className="text-gray-600">
-              Monu Rajj is in charge of overall development, focusing on
-              technology and the company&apos;s future growth. He ensures we
-              stay ahead in innovation and development.
-            </p>
-          </div>
-        </div>
+          
       </div>
     )
 }
