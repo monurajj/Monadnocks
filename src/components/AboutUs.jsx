@@ -4,14 +4,16 @@ import RajaImage from "../assets/rajababu.jpeg";
 import SonuImage from "../assets/sonu.png";
 
 const AboutUs=()=>{
-    return(
-        <div id="AboutUs" className="container mx-auto px-6 lg:px-16 py-12 lg:py-24 ">
+    return (
+      <div
+        id="AboutUs"
+        className="container mx-auto px-6 lg:px-16 py-12 lg:py-24 "
+      >
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 text-center">
           Know More About Us
         </h1>
         <div className="flex flex-col lg:flex-row justify-between gap-12">
-
-            {/* Monu Rajj */}
+          {/* Monu Rajj */}
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center lg:w-1/3">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <Image
@@ -29,7 +31,6 @@ const AboutUs=()=>{
               stay ahead in innovation and development.
             </p>
           </div>
-        </div>
 
           {/* Raj Bhushan Raj */}
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center lg:w-1/3">
@@ -68,10 +69,9 @@ const AboutUs=()=>{
               visibility of our company.
             </p>
           </div>
-
-          
+        </div>
       </div>
-    )
+    );
 }
 
 export default AboutUs;
