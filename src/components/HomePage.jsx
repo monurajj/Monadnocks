@@ -192,14 +192,16 @@ const LatestUpdates = ({ showUpdates, setShowUpdates }) => (
           NCM Championship Results
         </h4>
         <p className="text-sm text-gray-600">
-          "This competition transformed my confidence and knowledge! A must-join
-          event for every student." – Previous Participant
+          &quot;This competition transformed my confidence and knowledge! A
+          must-join event for every student.&quot; – Previous Participant
         </p>
         <p className="text-sm text-gray-600">
           Join the NCM Championship and compete with the best minds! Unlock
           exciting prizes, gain recognition, and be part of something bigger.
           And the best part?{" "}
-          <span className="text-lg text-red-900 ">It's absolutely FREE!</span>
+          <span className="text-lg text-red-900 ">
+            It&apos;s absolutely FREE!
+          </span>
         </p>
         <div className="flex justify-center">
           <a
